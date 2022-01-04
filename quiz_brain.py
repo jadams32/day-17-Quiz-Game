@@ -7,4 +7,11 @@ class QuizBrain:
     def next_question(self):
         current_question = self.question_list[self.question_number]
         self.question_number += 1
-        input(f"Q.{self.question_number} {current_question.text}(True/False):")
+        input(f"Q{self.question_number}. {current_question.text}(True/False):")
+
+    def still_have_questions(self):
+        """Returns True if there are questions left to answer, false otherwise."""
+        if self.question_number == len(self.question_list):
+            return False
+        else:
+            return True
